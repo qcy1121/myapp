@@ -55,3 +55,23 @@ If you do not want to regenerate your entities, while importing a JDL, you can u
 By default import-jdl regenerates only entities which have changed, if you want all your entities to be regenerated then pass in the --force flag. Please note that this will overwrite all your local changes to the entity files
 	jhipster import-jdl ./my-jdl-file.jdl --force
 If you want to use JHipster UML instead of the import-jdl sub-generator, you need to install it by running npm install -g jhipster-uml, and then run jhipster-uml yourFileName.jh.
+
+
+------------------------------------------------------------------
+运行，
+默认 mvnw 会默认按照dev启动服务，同时在执行gulp inject 会前端热加载
+If you want to use JHipster with the “production” profile, use the pre-configured “prod” Maven profile:
+./mvnw -Pprod
+
+--------------------------------------------------------------------
+部署
+
+To package the application as a “production” WAR, type:
+./mvnw -Pprod package
+生成的war和war.original
+war可直接运行，用于./***.war (linux) 或 java -jar ***.war 
+war.original 文件用于部署到Tomcat、websphere、weblogic等
+
+前端执行 gulp build 会在target/www生成压缩过的文件，
+
+Docker部署http://www.jhipster.tech/documentation-archive/v4.10.2/docker-compose/
