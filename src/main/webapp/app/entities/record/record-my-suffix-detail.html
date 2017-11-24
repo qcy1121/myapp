@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="myApp.record.detail.title">Record</span> {{vm.record.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="myApp.record.title">Title</span></dt>
+        <dd>
+            <span>{{vm.record.title}}</span>
+        </dd>
+        <dt><span data-translate="myApp.record.content">Content</span></dt>
+        <dd>
+            <span>{{vm.record.content}}</span>
+        </dd>
+        <dt><span data-translate="myApp.record.createtime">Createtime</span></dt>
+        <dd>
+            <span>{{vm.record.createtime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="myApp.record.updatetime">Updatetime</span></dt>
+        <dd>
+            <span>{{vm.record.updatetime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="myApp.record.isdeleted">Isdeleted</span></dt>
+        <dd>
+            <span>{{vm.record.isdeleted}}</span>
+        </dd>
+        <dt><span data-translate="myApp.record.isdone">Isdone</span></dt>
+        <dd>
+            <span>{{vm.record.isdone}}</span>
+        </dd>
+        <dt><span data-translate="myApp.record.eventlevel">Eventlevel</span></dt>
+        <dd>
+            <span>{{vm.record.eventlevel}}</span>
+        </dd>
+        <dt><span data-translate="myApp.record.openid">Openid</span></dt>
+        <dd>
+            <span>{{vm.record.openid}}</span>
+        </dd>
+        <dt><span data-translate="myApp.record.openid">Openid</span></dt>
+        <dd>
+            <a ui-sref="wx-user-my-suffix-detail({id:vm.record.openidId})">{{vm.record.openidId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="record-my-suffix-detail.edit({id:vm.record.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

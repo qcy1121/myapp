@@ -1,0 +1,34 @@
+{
+    "myApp": {
+        "wxUser" : {
+            "home": {
+                "title": "Wx Users",
+                "createLabel": "创建新 Wx User",
+                "createOrEditLabel": "创建或编辑 Wx User"
+            },
+            "created": "Wx User {{ param }} 创建成功",
+            "updated": "Wx User {{ param }} 更新成功",
+            "deleted": "Wx User {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Wx User {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Wx User"
+            },
+            "openid": "Openid",
+            "subscribe": "Subscribe",
+            "nickName": "Nick Name",
+            "sex": "Sex",
+            "language": "Language",
+            "city": "City",
+            "province": "Province",
+            "country": "Country",
+            "subscribetime": "Subscribetime",
+            "headimgurl": "Headimgurl",
+            "iscancel": "Iscancel",
+            "createtime": "Createtime",
+            "updatetime": "Updatetime",
+            "openid": "Openid"
+        }
+    }
+}

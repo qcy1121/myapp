@@ -1,0 +1,134 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myWxUserLabel" data-translate="myApp.wxUser.home.createOrEditLabel">Create or edit a Wx User</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.wxUser.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.wxUser.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.openid" for="field_openid">Openid</label>
+            <input type="text" class="form-control" name="openid" id="field_openid"
+                    ng-model="vm.wxUser.openid"
+                    ng-maxlength="40"/>
+            <div ng-show="editForm.openid.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.openid.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="40">
+                    This field cannot be longer than 40 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.subscribe" for="field_subscribe">Subscribe</label>
+            <input type="text" class="form-control" name="subscribe" id="field_subscribe"
+                    ng-model="vm.wxUser.subscribe"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.nickName" for="field_nickName">Nick Name</label>
+            <input type="text" class="form-control" name="nickName" id="field_nickName"
+                    ng-model="vm.wxUser.nickName"
+                    ng-maxlength="20"/>
+            <div ng-show="editForm.nickName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nickName.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.sex" for="field_sex">Sex</label>
+            <input type="number" class="form-control" name="sex" id="field_sex"
+                    ng-model="vm.wxUser.sex"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.language" for="field_language">Language</label>
+            <input type="text" class="form-control" name="language" id="field_language"
+                    ng-model="vm.wxUser.language"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.city" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                    ng-model="vm.wxUser.city"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.province" for="field_province">Province</label>
+            <input type="text" class="form-control" name="province" id="field_province"
+                    ng-model="vm.wxUser.province"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.country" for="field_country">Country</label>
+            <input type="text" class="form-control" name="country" id="field_country"
+                    ng-model="vm.wxUser.country"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.subscribetime" for="field_subscribetime">Subscribetime</label>
+                <div class="input-group">
+                    <input id="field_subscribetime" type="text" class="form-control" name="subscribetime" datetime-picker="{{dateformat}}" ng-model="vm.wxUser.subscribetime" is-open="vm.datePickerOpenStatus.subscribetime"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('subscribetime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.headimgurl" for="field_headimgurl">Headimgurl</label>
+            <input type="text" class="form-control" name="headimgurl" id="field_headimgurl"
+                    ng-model="vm.wxUser.headimgurl"
+                    ng-maxlength="1000"/>
+            <div ng-show="editForm.headimgurl.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.headimgurl.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="1000">
+                    This field cannot be longer than 1000 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.iscancel" for="field_iscancel">Iscancel</label>
+            <input type="number" class="form-control" name="iscancel" id="field_iscancel"
+                    ng-model="vm.wxUser.iscancel"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.createtime" for="field_createtime">Createtime</label>
+                <div class="input-group">
+                    <input id="field_createtime" type="text" class="form-control" name="createtime" datetime-picker="{{dateformat}}" ng-model="vm.wxUser.createtime" is-open="vm.datePickerOpenStatus.createtime"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createtime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.wxUser.updatetime" for="field_updatetime">Updatetime</label>
+                <div class="input-group">
+                    <input id="field_updatetime" type="text" class="form-control" name="updatetime" datetime-picker="{{dateformat}}" ng-model="vm.wxUser.updatetime" is-open="vm.datePickerOpenStatus.updatetime"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('updatetime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

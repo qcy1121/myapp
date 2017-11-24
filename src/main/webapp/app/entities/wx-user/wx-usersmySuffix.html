@@ -1,0 +1,84 @@
+<div>
+    <h2 data-translate="myApp.wxUser.home.title">Wx Users</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="wx-user-my-suffix.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="myApp.wxUser.home.createLabel">
+                        Create new Wx User
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="openid"><span data-translate="myApp.wxUser.openid">Openid</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="subscribe"><span data-translate="myApp.wxUser.subscribe">Subscribe</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nickName"><span data-translate="myApp.wxUser.nickName">Nick Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="sex"><span data-translate="myApp.wxUser.sex">Sex</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="language"><span data-translate="myApp.wxUser.language">Language</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="city"><span data-translate="myApp.wxUser.city">City</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="province"><span data-translate="myApp.wxUser.province">Province</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="country"><span data-translate="myApp.wxUser.country">Country</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="subscribetime"><span data-translate="myApp.wxUser.subscribetime">Subscribetime</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="headimgurl"><span data-translate="myApp.wxUser.headimgurl">Headimgurl</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="iscancel"><span data-translate="myApp.wxUser.iscancel">Iscancel</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createtime"><span data-translate="myApp.wxUser.createtime">Createtime</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="updatetime"><span data-translate="myApp.wxUser.updatetime">Updatetime</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="wxUser in vm.wxUsers track by wxUser.id">
+                    <td><a ui-sref="wx-user-my-suffix-detail({id:wxUser.id})">{{wxUser.id}}</a></td>
+                    <td>{{wxUser.openid}}</td>
+                    <td>{{wxUser.subscribe}}</td>
+                    <td>{{wxUser.nickName}}</td>
+                    <td>{{wxUser.sex}}</td>
+                    <td>{{wxUser.language}}</td>
+                    <td>{{wxUser.city}}</td>
+                    <td>{{wxUser.province}}</td>
+                    <td>{{wxUser.country}}</td>
+                    <td>{{wxUser.subscribetime | date:'medium'}}</td>
+                    <td>{{wxUser.headimgurl}}</td>
+                    <td>{{wxUser.iscancel}}</td>
+                    <td>{{wxUser.createtime | date:'medium'}}</td>
+                    <td>{{wxUser.updatetime | date:'medium'}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="wx-user-my-suffix-detail({id:wxUser.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="wx-user-my-suffix.edit({id:wxUser.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="wx-user-my-suffix.delete({id:wxUser.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

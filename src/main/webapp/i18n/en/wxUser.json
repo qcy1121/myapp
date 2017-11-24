@@ -1,0 +1,34 @@
+{
+    "myApp": {
+        "wxUser" : {
+            "home": {
+                "title": "Wx Users",
+                "createLabel": "Create a new Wx User",
+                "createOrEditLabel": "Create or edit a Wx User"
+            },
+            "created": "A new Wx User is created with identifier {{ param }}",
+            "updated": "A Wx User is updated with identifier {{ param }}",
+            "deleted": "A Wx User is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Wx User {{ id }}?"
+            },
+            "detail": {
+                "title": "Wx User"
+            },
+            "openid": "Openid",
+            "subscribe": "Subscribe",
+            "nickName": "Nick Name",
+            "sex": "Sex",
+            "language": "Language",
+            "city": "City",
+            "province": "Province",
+            "country": "Country",
+            "subscribetime": "Subscribetime",
+            "headimgurl": "Headimgurl",
+            "iscancel": "Iscancel",
+            "createtime": "Createtime",
+            "updatetime": "Updatetime",
+            "openid": "Openid"
+        }
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "openid",
+            "otherEntityName": "record",
+            "otherEntityRelationshipName": "openid"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "openid",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 40
+        },
+        {
+            "fieldName": "subscribe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nickName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "sex",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "language",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "province",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subscribetime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "headimgurl",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "iscancel",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createtime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "updatetime",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20171124064925",
+    "entityTableName": "wx_user",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

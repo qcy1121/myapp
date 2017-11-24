@@ -1,0 +1,71 @@
+
+<div>
+    <h2><span data-translate="myApp.wxUser.detail.title">Wx User</span> {{vm.wxUser.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="myApp.wxUser.openid">Openid</span></dt>
+        <dd>
+            <span>{{vm.wxUser.openid}}</span>
+        </dd>
+        <dt><span data-translate="myApp.wxUser.subscribe">Subscribe</span></dt>
+        <dd>
+            <span>{{vm.wxUser.subscribe}}</span>
+        </dd>
+        <dt><span data-translate="myApp.wxUser.nickName">Nick Name</span></dt>
+        <dd>
+            <span>{{vm.wxUser.nickName}}</span>
+        </dd>
+        <dt><span data-translate="myApp.wxUser.sex">Sex</span></dt>
+        <dd>
+            <span>{{vm.wxUser.sex}}</span>
+        </dd>
+        <dt><span data-translate="myApp.wxUser.language">Language</span></dt>
+        <dd>
+            <span>{{vm.wxUser.language}}</span>
+        </dd>
+        <dt><span data-translate="myApp.wxUser.city">City</span></dt>
+        <dd>
+            <span>{{vm.wxUser.city}}</span>
+        </dd>
+        <dt><span data-translate="myApp.wxUser.province">Province</span></dt>
+        <dd>
+            <span>{{vm.wxUser.province}}</span>
+        </dd>
+        <dt><span data-translate="myApp.wxUser.country">Country</span></dt>
+        <dd>
+            <span>{{vm.wxUser.country}}</span>
+        </dd>
+        <dt><span data-translate="myApp.wxUser.subscribetime">Subscribetime</span></dt>
+        <dd>
+            <span>{{vm.wxUser.subscribetime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="myApp.wxUser.headimgurl">Headimgurl</span></dt>
+        <dd>
+            <span>{{vm.wxUser.headimgurl}}</span>
+        </dd>
+        <dt><span data-translate="myApp.wxUser.iscancel">Iscancel</span></dt>
+        <dd>
+            <span>{{vm.wxUser.iscancel}}</span>
+        </dd>
+        <dt><span data-translate="myApp.wxUser.createtime">Createtime</span></dt>
+        <dd>
+            <span>{{vm.wxUser.createtime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="myApp.wxUser.updatetime">Updatetime</span></dt>
+        <dd>
+            <span>{{vm.wxUser.updatetime | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="wx-user-my-suffix-detail.edit({id:vm.wxUser.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
