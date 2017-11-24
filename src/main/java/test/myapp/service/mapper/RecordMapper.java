@@ -11,10 +11,10 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring", uses = {WxUserMapper.class})
 public interface RecordMapper extends EntityMapper<RecordDTO, Record> {
 
-    @Mapping(source = "openid.id", target = "openidId")
+    @Mapping(source = "wxUser.id", target = "wxUserId")
     RecordDTO toDto(Record record); 
 
-    @Mapping(source = "openidId", target = "openid")
+    @Mapping(source = "wxUserId", target = "wxUser")
     Record toEntity(RecordDTO recordDTO);
 
     default Record fromId(Long id) {

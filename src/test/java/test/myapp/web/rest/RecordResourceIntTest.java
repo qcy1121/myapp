@@ -64,9 +64,6 @@ public class RecordResourceIntTest {
     private static final Integer DEFAULT_EVENTLEVEL = 1;
     private static final Integer UPDATED_EVENTLEVEL = 2;
 
-    private static final String DEFAULT_OPENID = "AAAAAAAAAA";
-    private static final String UPDATED_OPENID = "BBBBBBBBBB";
-
     @Autowired
     private RecordRepository recordRepository;
 
@@ -117,8 +114,7 @@ public class RecordResourceIntTest {
             .updatetime(DEFAULT_UPDATETIME)
             .isdeleted(DEFAULT_ISDELETED)
             .isdone(DEFAULT_ISDONE)
-            .eventlevel(DEFAULT_EVENTLEVEL)
-            .openid(DEFAULT_OPENID);
+            .eventlevel(DEFAULT_EVENTLEVEL);
         return record;
     }
 
@@ -150,7 +146,6 @@ public class RecordResourceIntTest {
         assertThat(testRecord.getIsdeleted()).isEqualTo(DEFAULT_ISDELETED);
         assertThat(testRecord.getIsdone()).isEqualTo(DEFAULT_ISDONE);
         assertThat(testRecord.getEventlevel()).isEqualTo(DEFAULT_EVENTLEVEL);
-        assertThat(testRecord.getOpenid()).isEqualTo(DEFAULT_OPENID);
     }
 
     @Test
@@ -190,8 +185,7 @@ public class RecordResourceIntTest {
             .andExpect(jsonPath("$.[*].updatetime").value(hasItem(DEFAULT_UPDATETIME.toString())))
             .andExpect(jsonPath("$.[*].isdeleted").value(hasItem(DEFAULT_ISDELETED)))
             .andExpect(jsonPath("$.[*].isdone").value(hasItem(DEFAULT_ISDONE)))
-            .andExpect(jsonPath("$.[*].eventlevel").value(hasItem(DEFAULT_EVENTLEVEL)))
-            .andExpect(jsonPath("$.[*].openid").value(hasItem(DEFAULT_OPENID.toString())));
+            .andExpect(jsonPath("$.[*].eventlevel").value(hasItem(DEFAULT_EVENTLEVEL)));
     }
 
     @Test
@@ -211,8 +205,7 @@ public class RecordResourceIntTest {
             .andExpect(jsonPath("$.updatetime").value(DEFAULT_UPDATETIME.toString()))
             .andExpect(jsonPath("$.isdeleted").value(DEFAULT_ISDELETED))
             .andExpect(jsonPath("$.isdone").value(DEFAULT_ISDONE))
-            .andExpect(jsonPath("$.eventlevel").value(DEFAULT_EVENTLEVEL))
-            .andExpect(jsonPath("$.openid").value(DEFAULT_OPENID.toString()));
+            .andExpect(jsonPath("$.eventlevel").value(DEFAULT_EVENTLEVEL));
     }
 
     @Test
@@ -239,8 +232,7 @@ public class RecordResourceIntTest {
             .updatetime(UPDATED_UPDATETIME)
             .isdeleted(UPDATED_ISDELETED)
             .isdone(UPDATED_ISDONE)
-            .eventlevel(UPDATED_EVENTLEVEL)
-            .openid(UPDATED_OPENID);
+            .eventlevel(UPDATED_EVENTLEVEL);
         RecordDTO recordDTO = recordMapper.toDto(updatedRecord);
 
         restRecordMockMvc.perform(put("/api/records")
@@ -259,7 +251,6 @@ public class RecordResourceIntTest {
         assertThat(testRecord.getIsdeleted()).isEqualTo(UPDATED_ISDELETED);
         assertThat(testRecord.getIsdone()).isEqualTo(UPDATED_ISDONE);
         assertThat(testRecord.getEventlevel()).isEqualTo(UPDATED_EVENTLEVEL);
-        assertThat(testRecord.getOpenid()).isEqualTo(UPDATED_OPENID);
     }
 
     @Test

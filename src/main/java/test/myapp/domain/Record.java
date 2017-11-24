@@ -46,12 +46,8 @@ public class Record implements Serializable {
     @Column(name = "eventlevel")
     private Integer eventlevel;
 
-    @Size(max = 40)
-    @Column(name = "openid", length = 40)
-    private String openid;
-
     @ManyToOne
-    private WxUser openid;
+    private WxUser wxUser;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -153,30 +149,17 @@ public class Record implements Serializable {
         this.eventlevel = eventlevel;
     }
 
-    public String getOpenid() {
-        return openid;
+    public WxUser getWxUser() {
+        return wxUser;
     }
 
-    public Record openid(String openid) {
-        this.openid = openid;
+    public Record wxUser(WxUser wxUser) {
+        this.wxUser = wxUser;
         return this;
     }
 
-    public void setOpenid(String openid) {
-        this.openid = openid;
-    }
-
-    public WxUser getOpenid() {
-        return openid;
-    }
-
-    public Record openid(WxUser wxUser) {
-        this.openid = wxUser;
-        return this;
-    }
-
-    public void setOpenid(WxUser wxUser) {
-        this.openid = wxUser;
+    public void setWxUser(WxUser wxUser) {
+        this.wxUser = wxUser;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -211,7 +194,6 @@ public class Record implements Serializable {
             ", isdeleted='" + getIsdeleted() + "'" +
             ", isdone='" + getIsdone() + "'" +
             ", eventlevel='" + getEventlevel() + "'" +
-            ", openid='" + getOpenid() + "'" +
             "}";
     }
 }

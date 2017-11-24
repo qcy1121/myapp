@@ -2,9 +2,9 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "many-to-one",
-            "relationshipName": "openid",
+            "relationshipName": "wxUser",
             "otherEntityName": "wxUser",
+            "relationshipType": "many-to-one",
             "otherEntityField": "id"
         }
     ],
@@ -44,14 +44,6 @@
         {
             "fieldName": "eventlevel",
             "fieldType": "Integer"
-        },
-        {
-            "fieldName": "openid",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "maxlength"
-            ],
-            "fieldValidateRulesMaxlength": 40
         }
     ],
     "changelogDate": "20171124064926",

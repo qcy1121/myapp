@@ -50,11 +50,7 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="openid" type="varchar(40)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="openid_id" type="bigint">
+            <column name="wx_user_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

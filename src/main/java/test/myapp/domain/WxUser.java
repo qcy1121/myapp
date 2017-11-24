@@ -68,7 +68,7 @@ public class WxUser implements Serializable {
     @Column(name = "updatetime")
     private Instant updatetime;
 
-    @OneToMany(mappedBy = "openid")
+    @OneToMany(mappedBy = "wxUser")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Record> openids = new HashSet<>();
@@ -262,13 +262,13 @@ public class WxUser implements Serializable {
 
     public WxUser addOpenid(Record record) {
         this.openids.add(record);
-        record.setOpenid(this);
+        record.setWxUser(this);
         return this;
     }
 
     public WxUser removeOpenid(Record record) {
         this.openids.remove(record);
-        record.setOpenid(null);
+        record.setWxUser(null);
         return this;
     }
 

@@ -22,8 +22,7 @@
             "isdeleted": "Isdeleted",
             "isdone": "Isdone",
             "eventlevel": "Eventlevel",
-            "openid": "Openid",
-            "openid": "Openid"
+            "wxUser": "Wx User"
         }
     }
 }

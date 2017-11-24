@@ -111,7 +111,6 @@
                                 isdeleted: null,
                                 isdone: null,
                                 eventlevel: null,
-                                openid: null,
                                 id: null
                             };
                         }

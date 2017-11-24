@@ -31,10 +31,7 @@ public class RecordDTO implements Serializable {
 
     private Integer eventlevel;
 
-    @Size(max = 40)
-    private String openid;
-
-    private Long openidId;
+    private Long wxUserId;
 
     public Long getId() {
         return id;
@@ -100,20 +97,12 @@ public class RecordDTO implements Serializable {
         this.eventlevel = eventlevel;
     }
 
-    public String getOpenid() {
-        return openid;
+    public Long getWxUserId() {
+        return wxUserId;
     }
 
-    public void setOpenid(String openid) {
-        this.openid = openid;
-    }
-
-    public Long getOpenidId() {
-        return openidId;
-    }
-
-    public void setOpenidId(Long wxUserId) {
-        this.openidId = wxUserId;
+    public void setWxUserId(Long wxUserId) {
+        this.wxUserId = wxUserId;
     }
 
     @Override
@@ -148,7 +137,6 @@ public class RecordDTO implements Serializable {
             ", isdeleted='" + getIsdeleted() + "'" +
             ", isdone='" + getIsdone() + "'" +
             ", eventlevel='" + getEventlevel() + "'" +
-            ", openid='" + getOpenid() + "'" +
             "}";
     }
 }

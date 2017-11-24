@@ -26,8 +26,7 @@
                     <th><span data-translate="myApp.record.isdeleted">Isdeleted</span></th>
                     <th><span data-translate="myApp.record.isdone">Isdone</span></th>
                     <th><span data-translate="myApp.record.eventlevel">Eventlevel</span></th>
-                    <th><span data-translate="myApp.record.openid">Openid</span></th>
-                    <th><span data-translate="myApp.record.openid">Openid</span></th>
+                    <th><span data-translate="myApp.record.wxUser">Wx User</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -41,9 +40,8 @@
                     <td>{{record.isdeleted}}</td>
                     <td>{{record.isdone}}</td>
                     <td>{{record.eventlevel}}</td>
-                    <td>{{record.openid}}</td>
                     <td>
-                        <a ui-sref="wx-user-my-suffix-detail({id:record.openidId})">{{record.openidId}}</a>
+                        <a ui-sref="wx-user-my-suffix-detail({id:record.wxUserId})">{{record.wxUserId}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

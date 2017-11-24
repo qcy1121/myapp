@@ -11,7 +11,7 @@ entity WxUser{
     headimgurl String maxlength(1000),
     is_cancel Integer,
     create_time Instant ,
-    update_time Instant 
+    update_time Instant
 }
 
 entity Record{
@@ -21,12 +21,11 @@ entity Record{
     update_time Instant,
     is_deleted Integer,
     is_done Integer,
-    event_level Integer,
-    openid String maxlength(40)
+    event_level Integer
 }
 
 relationship OneToMany{
-	WxUser{openid} to Record{openid}
+	WxUser{openid} to Record
 }
 
 

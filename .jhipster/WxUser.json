@@ -5,7 +5,7 @@
             "relationshipType": "one-to-many",
             "relationshipName": "openid",
             "otherEntityName": "record",
-            "otherEntityRelationshipName": "openid"
+            "otherEntityRelationshipName": "wxUser"
         }
     ],
     "fields": [
